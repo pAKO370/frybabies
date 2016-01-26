@@ -5,10 +5,71 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Chewy" />
 </head>
 <body>
 
+<nav class="navbar navbar-inverse navbar-fixed-top"> 
+  <div class="container">
+    <h2 class='text-center h2'>FRYbabies Concessions</h2>
+      <div class="navbar-header">
+        <ul class="nav navbar-nav">
+          <li><%=link_to "Home", root_path, class: 'navi', id: 'a' %></li>
+          <li><%=link_to "Gallery",root_path,class: 'navi',id: 'a' %></li>
+          <li><%=link_to "Events",root_path,class: 'navi',id: 'a' %></li>
+          <li><%=link_to "Contact Us",root_path,class: 'navi',id: 'a' %></li>
+          <li><%=link_to image_tag("/favicons/facebookfav.png", size: '25x25'), "https://www.facebook.com/Frybabies-204870996232055/",class: 'navi pull-right'%></li>
+          <li><%=link_to image_tag("/favicons/twitter_favicon.png", size: '25x25'), "https://twitter.com/frybabies",class: 'navi pull-right'%></li>
+          <% if current_user %>
+          <% end %>
+            
+        </ul>
+      </div>
+  </div>
+</nav>
+
+
+
+
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:notice] %>
+  </div>
+<% elsif flash.now[:alert] %>
+  <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash.now[:alert] %>
+  </div>
+<% elsif flash[:alert] %>
+  <div class="alert alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<div class ='container'>
 <%= yield %>
+</div>
+
+<div class ='navbar navbar-inverse navbar-fixed-bottom'>
+  <div class ='container body'>
+    <% if user_signed_in? %>
+    <% else %>
+    <div class="pull-right bottom user"> 
+      <%= link_to "Sign In", new_user_session_path, :class => 'small' %>
+    </div>
+    <% end %>
+
+    <p class='pull-right bottom'>Created by: Phil Fluegel</p>
+    <div class="pull-left user-info">
+      <% if user_signed_in? %>
+        <%= link_to 'User Profile',edit_user_registration_path,method: :get, :class => 'btn btn-success navbar-btn btn-sm'%> || <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'btn btn-success navbar-btn btn-sm' %>
+      <% else %> 
+      <% end %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

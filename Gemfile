@@ -30,3 +30,7 @@ source 'https://rubygems.org'
  gem 'turbolinks'
  # Bootstrap for CSS
  gem 'bootstrap-sass'
+ # devise gem for user sign in and signup
+ gem 'devise'
+ # for enviroment variables
+ gem 'figaro', '1.0'
