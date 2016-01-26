@@ -18,6 +18,9 @@
           <li><%=link_to "Gallery",root_path,class: 'navi',id: 'a' %></li>
           <li><%=link_to "Events",root_path,class: 'navi',id: 'a' %></li>
           <li><%=link_to "Contact Us",root_path,class: 'navi',id: 'a' %></li>
+          <% if user_signed_in? %>
+          <li><%=link_to "Contacts",root_path,class: 'navi',id: 'a' %></li>
+          <% end %>
           <li><%=link_to image_tag("/favicons/facebookfav.png", size: '25x25'), "https://www.facebook.com/Frybabies-204870996232055/",class: 'navi pull-right'%></li>
           <li><%=link_to image_tag("/favicons/twitter_favicon.png", size: '25x25'), "https://twitter.com/frybabies",class: 'navi pull-right'%></li>
           <% if current_user %>
