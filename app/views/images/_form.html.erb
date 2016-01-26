@@ -1,0 +1,7 @@
+<%= form_for [image], html:{class: 'form-inline'} do |f| %>
+<div class="form-group">
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+<%= f.submit "Save", class: 'btn btn-success btn-xs' %>
+</div>
+<% end %>

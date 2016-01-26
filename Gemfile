@@ -34,3 +34,7 @@ source 'https://rubygems.org'
  gem 'devise'
  # for enviroment variables
  gem 'figaro', '1.0'
+ # carrier wave for images
+ gem 'carrierwave'
+ # for thumbnails
+ gem 'mini_magick'

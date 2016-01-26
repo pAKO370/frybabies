@@ -16,9 +16,10 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
-
+  
  body {
   padding-top: 150px;
+  padding-bottom: 100px;
  }
  nav {
   height: 155px;
@@ -29,7 +30,7 @@
   margin-top: 0px;
   top: -18px;
  }
- .navbar {
+ .navbar-fixed-top {
   border-bottom: black 35px solid;
  }
  .container {
@@ -63,8 +64,17 @@
   }
 
  .navbar-fixed-bottom {
-  position: absolute;
-  background-color: #00c0ff;
+  
+  background-color: black;
   z-index: 10;
   }
   
+.thumbnail {
+  border-radius: 10px;
+}
+.phil {
+  color: white;
+}
+.home-img {
+  border-radius: 40px;
+}
