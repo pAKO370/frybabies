@@ -21,9 +21,23 @@ class ImagesController < ApplicationController
       redirect_to images_path
     end
   end
+
+  def destroy
+    @image = Image.find(params[:id])
+
+    if @image.destroy
+      flash[:notice] = "Image was deleted"
+      redirect_to images_path
+    else
+      flash[:alert] = "Image was not deleted"
+      redirect_to images_path
+    end
+  end
+
   private
   
   def image_params
     params.require(:image).permit(:image)
   end
+
 end

@@ -5,15 +5,18 @@
 <% end %>
 <br>
 <div class="container">
-<div class="row">
-  <% @images.each do |img| %>
-  <div class="col-md-4">
-    <%= link_to img.image_url.to_s do %>
-      <%= image_tag img.image_url(:thumb).to_s, class: 'thumbnail' %>
-    <br>
+  <div class="row">
+    <% @images.each do |img| %>
+    <div class="col-md-4">
+      <% if user_signed_in? %>
+        <%= link_to "delete",image_path(id: img.id),method: :delete %>
+        <% end %>
+        <%= link_to img.image_url.to_s do %>
+        <%= image_tag img.image_url(:thumb).to_s, class: 'thumbnail' %>
+        
+<br>
+      <% end %>
+    </div>
     <% end %>
   </div>
-  <% end %>
-</div>
-</div>
 </div>

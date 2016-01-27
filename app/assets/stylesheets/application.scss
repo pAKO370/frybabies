@@ -16,6 +16,8 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(https://fonts.googleapis.com/css?family=Aladin);
   
  body {
   padding-top: 150px;
@@ -41,9 +43,8 @@
   color: #ff3384;
   line-height:100px; 
   vertical-align: middle;
-  font-family: 'Indie Flower', bold;
+  font: 'shadow into light';
   font-size: 55px;
-  font-family: Chewy;
   font-style: normal;
   font-variant: normal;
   font-weight: 500;
@@ -51,7 +52,7 @@
   
   
   .navbar {
-    background-color: #00c0ff;
+    background-image: url(http://images5.alphacoders.com/380/380541.jpg);
   }
   #a {
     color: white;
@@ -77,4 +78,8 @@
 }
 .home-img {
   border-radius: 40px;
+}
+.outline {
+  border: 1px solid #c6d9ec;
+  border-radius: 5px;
 }
