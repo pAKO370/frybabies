@@ -17,9 +17,9 @@
           <li><%=link_to "Home", root_path, class: 'navi', id: 'a' %></li>
           <li><%=link_to "Gallery",images_path,class: 'navi',id: 'a' %></li>
           <li><%=link_to "Events",events_index_path,class: 'navi',id: 'a' %></li>
-          <li><%=link_to "Contact Us",root_path,class: 'navi',id: 'a' %></li>
+          <li><%=link_to "Contact Us",new_contact_path,class: 'navi',id: 'a' %></li>
           <% if user_signed_in? %>
-          <li><%=link_to "Contacts",root_path,class: 'navi',id: 'a' %></li>
+          <li><%=link_to "Contacts",contacts_path,class: 'navi',id: 'a' %></li>
           <% end %>
           <li><%=link_to image_tag("/favicons/facebookfav.png", size: '25x25'), "https://www.facebook.com/Frybabies-204870996232055/",class: 'navi pull-right'%></li>
           <li><%=link_to image_tag("/favicons/twitter_favicon.png", size: '25x25'), "https://twitter.com/frybabies",class: 'navi pull-right'%></li>
@@ -33,23 +33,24 @@
 
 
 
-
-<% if flash[:notice] %>
-  <div class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:notice] %>
-  </div>
-<% elsif flash.now[:alert] %>
-  <div class="alert alert-danger">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash.now[:alert] %>
-  </div>
-<% elsif flash[:alert] %>
-  <div class="alert alert-warning">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:alert] %>
-  </div>
-<% end %>
+<div class="flash">
+  <% if flash[:notice] %>
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+    </div>
+  <% elsif flash.now[:alert] %>
+    <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash.now[:alert] %>
+    </div>
+  <% elsif flash[:alert] %>
+    <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+    </div>
+  <% end %>
+</div>
 
 <div class ='container'>
 <%= yield %>

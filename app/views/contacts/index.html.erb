@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+<h1>Contacts</h1>
+<p>Click on contact to view more info</p>
+
+<% @contacts.each do |con| %>
+  <h3><%=link_to "#{con.name}", contact_path(id: con.id)%></h3> 
+<% end %>
+<% else %>
+<%= flash.now[:alert] = "You are not allowed to view this page" %>
+<% end %>
