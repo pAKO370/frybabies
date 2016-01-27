@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
+
   def index
     @images = Image.all
   end

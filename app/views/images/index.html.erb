@@ -1,22 +1,24 @@
-<h1>Images from previous events</h1>
-<p>Click on thumbnail to view larger image</p>
-<% if user_signed_in? %>
-  <%= render partial: 'form',locals: {image: Image.new} %>
-<% end %>
-<br>
 <div class="container">
-  <div class="row">
-    <% @images.each do |img| %>
-    <div class="col-md-4">
-      <% if user_signed_in? %>
-        <%= link_to "delete",image_path(id: img.id),method: :delete %>
-        <% end %>
-        <%= link_to img.image_url.to_s do %>
-        <%= image_tag img.image_url(:thumb).to_s, class: 'thumbnail' %>
-        
-<br>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
+  <h1>Images from previous events</h1>
+
+  <p>Click on thumbnail to view larger image</p>
+  <% if user_signed_in? %>
+    <%= render partial: 'form',locals: {image: Image.new} %>
+  <% end %>
+  <br>
 </div>
+<div class="container">
+  <div class ="main">  
+    <% @images.each do |img| %>
+    <div class='each_img'>
+      <% if user_signed_in? %>
+        
+          <%= link_to "delete",image_path(id: img.id),method: :delete %>
+          <% end %>
+          <%= link_to img.image_url.to_s do %>
+            <%= image_tag img.image_url(:thumb).to_s, class: 'border' %>
+          </div>
+      <% end %>
+    <% end %>
+  </div>  
+</div> 

@@ -4,7 +4,12 @@ class ContactsController < ApplicationController
   end
 
   def new
-    @contact = Contact.new
+    # if params[:contact]
+    #   @contact = Contact.new(contact_params)
+    #   @contact.valid?
+    # else
+      @contact = Contact.new
+    # end
   end
 
   def create
@@ -14,8 +19,8 @@ class ContactsController < ApplicationController
       flash[:notice] = "Your information has been sent"
       redirect_to root_path
     else
-      flash[:warning] = "There was a problem sending your information"
-      redirect_to new_contact_path
+      flash[:alert] = "There was a problem sending your information"
+      render 'contacts/new'
     end
   end
 

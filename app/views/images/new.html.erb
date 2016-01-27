@@ -1,11 +1,13 @@
-<h1>Images#new</h1>
-<p>Find me in app/views/images/new.html.erb</p>
-  <%= form_for @image, html: {class: 'form-inline'} do |f| %>
+<div class="container">
+  <h1>Images#new</h1>
+  <p>Find me in app/views/images/new.html.erb</p>
+    <%= form_for @image, html: {class: 'form-inline'} do |f| %>
 
-<div class="form-group">
-  <%= f.label :image %>
-  <%= f.text_field :image, class: 'text-field' %>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.text_field :image, class: 'text-field' %>
 
-<%= f.submit "Save", class: 'btn btn-success btn-xs' %>
-<% end %>
+  <%= f.submit "Save", class: 'btn btn-success btn-xs' %>
+  <% end %>
+  </div>
 </div>
