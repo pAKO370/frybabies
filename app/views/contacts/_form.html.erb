@@ -13,14 +13,14 @@
 
     <%= form_group_tag(contact.errors[:name]) do %>
       <%= f.label :name %>
-      <%= f.text_field :name,class: 'from-control', placeholder: 'Enter your name here' %>
+      <%= f.text_field :name,class: 'form-control', placeholder: 'Enter your name here' %>
     <% end %>
     <%= form_group_tag(contact.errors[:email]) do %>
       <%= f.label :email %>
-      <%= f.text_field :email, cols: 80,class: 'from-control', placeholder: 'Enter your email here' %>
+      <%= f.text_field :email, cols: 80,class: 'form-control', placeholder: 'Enter your email here' %>
     <% end %>
     <%= form_group_tag(contact.errors[:body]) do %>
-      <%= f.text_area :body, rows: 20, cols: 80, class: 'from-control', placeholder: 'Enter your text here' %>
+      <%= f.text_area :body, rows: 20, cols: 80, class: 'form-control', placeholder: 'Enter your text here' %>
     <% end %>
 
     <div class='form-group'>
