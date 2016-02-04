@@ -38,3 +38,5 @@ source 'https://rubygems.org'
  gem 'carrierwave'
  # for thumbnails
  gem 'mini_magick'
+ # fog for aws services
+ gem "fog"
